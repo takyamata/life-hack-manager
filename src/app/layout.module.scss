@@ -1,0 +1,6 @@
+@use '@mixin' as *;
+
+.layout {
+    display: grid;
+    grid-template-rows: 12.8rem 1fr;
+}

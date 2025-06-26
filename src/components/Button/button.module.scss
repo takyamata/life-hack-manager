@@ -1,0 +1,208 @@
+@use '@mixin' as *;
+
+.button {
+    transition: background-color .2s ease, border 0.1s ease, opacity 0.2s ease;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .4rem;
+    &:focus-visible {
+        outline: 0.2rem solid var(--blue_1);
+    }
+    &:disabled {
+        pointer-events: none;
+        background-color: var(--gray_2);
+        border: .1rem solid var(--gray_2);
+        * {
+            color: var(--gray_1);
+        }
+        svg * {
+            fill: var(--gray_1);
+            stroke: var(--gray_1);
+        }
+    }
+    @include hover {
+        opacity: .8;
+    }
+    &-box-shadow {
+        box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+    }
+    &-size {
+        &-width {
+            @mixin baseSize() {
+                width: 100%;
+                min-width: fit-content;
+            }
+            &-fit-content {
+                width: fit-content;
+            }
+            &-156 {
+                width: 15.6rem;
+            }
+            &-max {
+                // @include baseSize();
+                width: 100%;
+            }
+        }
+        &-height {
+            &-fit-content {
+                height: fit-content;
+            }
+            &-48 {
+                height: 4.8rem;
+            }
+            &-max {
+                height: 100%;
+            }
+        }
+    }
+    &-max-width {
+        &-fit-content {
+            max-width: fit-content;
+        }
+        &-64 {
+            max-width: 6.4rem;
+        }
+        &-104 {
+            max-width: 10.4rem;
+        }
+        &-108 {
+            max-width: 10.8rem;
+        }
+        &-112 {
+            max-width: 11.2rem;
+        }
+        &-120 {
+            max-width: 12rem;
+        }
+        &-130 {
+            max-width: 13rem;
+        }
+        &-150 {
+            max-width: 15rem;
+        }
+        &-160 {
+            max-width: 16rem;
+        }
+        &-178 {
+            max-width: 17.8rem;
+        }
+        &-204 {
+            max-width: 20.4rem;
+        }
+        &-206 {
+            max-width: 20.6rem;
+        }
+        &-240 {
+            max-width: 24rem;
+        }
+    }
+    &-justify-content {
+        &-flex-start {
+            justify-content: flex-start;
+        }
+    }
+    &-background-color {
+        &-white {
+            background-color: var(--white);
+        }
+        &-none {
+            background: none;
+        }
+    }
+    &-border-color {
+        &-white_1 {
+            border: .1rem solid var(--white_1);
+        }
+        &-blue_1 {
+            border: .1rem solid var(--blue_1);
+        }
+        &-red_1 {
+            border: .1rem solid var(--red_1);
+        }
+        &-gray_2 {
+            border: .1rem solid var(--gray_2);
+        }
+        &-none {
+            border: none;
+        }
+    }
+    &-border-radius {
+        &-0 {
+            border-radius: 0;
+        }
+        &-8 {
+            border-radius: .8rem;
+        }
+    }
+    &-padding {
+        &-8 {
+            &-12 {
+                padding: .8rem 1.2rem;
+            }
+        }
+        &-0 {
+            &-16 {
+                padding: 0 1.6rem;
+            }
+        }
+        &-4-70-4-16 {
+            padding: .4rem 7rem .4rem 1.6rem;
+        }
+    }
+    &-margin-top {
+        &-auto {
+            margin-top: auto;
+        }
+    }
+    &-hover {
+        &-underline {
+            &:active {
+                @include hover {
+                    color: var(--blue_1);
+                }
+            }
+            @include hover {
+                color: var(--blue_1);
+                text-decoration: underline;
+            }
+        }
+        &-underline-black_1 {
+            &:active {
+                @include hover {
+                    color: var(--black_1);
+                }
+            }
+            @include hover {
+                color: var(--black_1);
+                text-decoration: underline;
+            }
+        }
+        &-underline-red_1 {
+            &:active {
+                @include hover {
+                    color: var(--red_1);
+                }
+            }
+            @include hover {
+                color: var(--red_1);
+                text-decoration: underline;
+            }
+        }
+        &-bg-gray_4 {
+            @include hover {
+                opacity: 1;
+                background-color: var(--gray_4);
+                border: .1rem solid var(--gray_4);
+            }
+        }
+    }
+    &-flex-shrink {
+        &-0 {
+            flex-shrink: 0;
+        }
+    }
+}

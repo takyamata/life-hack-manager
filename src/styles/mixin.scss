@@ -1,0 +1,40 @@
+@use 'sass:math';
+
+// ブレイクポイント
+@mixin display {
+    @media screen and (min-width: 1441px) {
+        @content;
+    }
+}
+@mixin pc {
+    @media screen and (min-width: 1024px) {
+        @content;
+    }
+}
+@mixin sp {
+    @media screen and (max-width: 834px) {
+        @content;
+    }
+}
+
+// ホバー
+@mixin hover {
+    @media (hover: hover) and (pointer: fine) {
+        &:hover {
+            @content;
+        }
+    }
+}
+
+// 可変サイズ利用の際は、フォントサイズ含む単位は@functuin px()で記述
+@function px($size, $container-width) {
+    @return calc($size * (calc(1 / $container-width * 100cqw)));
+}
+
+// 複数行省略
+@mixin leader($row: 2) {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $row;
+    overflow: hidden;
+}

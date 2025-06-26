@@ -1,5 +1,125 @@
-// グローバルスタイル例
-body {
-  margin: 0;
-  font-family: system-ui, sans-serif;
+@use '@mixin' as *;
+html {
+    font-size: 62.5%;
 }
+
+body {
+    min-height: 100vh;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: auto;
+    font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'メイリオ', Meiryo, sans-serif;
+    color: var(--black_1);
+    font-size: 1.6rem;
+    line-height: 1.5;
+    letter-spacing: 0;
+    * {
+        font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'メイリオ', Meiryo, sans-serif;
+    }
+    &.isModalOpen {
+        overflow: hidden !important;
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+    list-style-type: none;
+}
+ul,
+li {
+    list-style: none;
+    list-style-type: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote {
+    &:before,
+    &:after {
+        content: none;
+    }
+}
+
+q {
+    &:before,
+    &:after {
+        content: none;
+    }
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+i,
+em {
+    font-style: normal;
+}
+
+input,
+button,
+textarea,
+select {
+    background: none;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+// :not(:focus):invalid {
+//     scroll-margin-top: 200px;
+// }

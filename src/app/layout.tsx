@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
-import { Providers } from './providers';
-import '../styles/global.scss';
+import { Providers } from '@app/providers';
+import styles from './layout.module.scss'
+import '@styles/global.scss';
+import '@styles/variables.scss';
+import Header from '@/components/Header/Header';
 
 export const metadata: Metadata = {
   title: 'Life Hack Manager',
@@ -12,11 +15,18 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <html lang="ja">
-      <body>
-        <Providers>{children}</Providers>
-      </body>
-    </html>
-  );
+    return (
+        <html lang="ja">
+            <body>
+                <Providers>
+                    <div className={styles.layout}>
+                        <Header/>
+                        <main className={styles.main}>
+                            {children}
+                        </main>
+                    </div>
+                </Providers>
+            </body>
+        </html>
+    );
 }
