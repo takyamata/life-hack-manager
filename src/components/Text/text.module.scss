@@ -5,7 +5,7 @@
     font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'メイリオ', Meiryo, sans-serif;
     line-height: 1.25;
 }
-$colors: ( white, blue, );
+$colors: ( white_1, blue_1, );
 .color {
     @each $color in $colors {
         &-#{$color} {

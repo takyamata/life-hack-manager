@@ -9,7 +9,6 @@ export const metadata: Metadata = {
   title: 'Life Hack Manager',
   description: 'Next.js + Jotai + Firebase + Sass スターター',
 };
-
 export default function RootLayout({
   children,
 }: {
